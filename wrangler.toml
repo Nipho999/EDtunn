@@ -18,7 +18,7 @@ API_HOST = "api.v2board.com"
 #UUID = "76bee1cf-3881-4255-9d35-9104d245a1aa"
 
 # Uncomment if you have a custom build output directory for Pages or Workers
-pages_build_output_dir = "dist"
+pages_build_output_dir = "minify"
 
 # Uncomment this section if you are using Durable Objects
 #[durable_objects]
