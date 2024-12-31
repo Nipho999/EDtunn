@@ -1,15 +1,51 @@
-name = "cf-worker-ws-dev" # todo
-#name = "cf-worker-connect-test" # todo
-#main = "test/worker/cf-cdn-cgi-trace2.js"
-#main = "test/worker/worker-connect-test.js"
+name = "cf-worker-ws-dev" # Name of your Worker
+#name = "cf-worker-connect-test" # Alternate Worker name (commented out)
+
+# Specify the entry point for the Worker
 main = "_worker.js"
+
+# Compatibility date for Worker runtime features
 compatibility_date = "2024-12-30"
 
 [vars]
-# UUID = "d342d11e-d424-4583-b36e-524ab1f0afa4"
-#PROXYIP = "41.223.246.148"
+# Environment variables used by your Worker
+# Uncomment these and replace with actual values as needed
+PROXYIP = "41.223.246.148"
 # DNS_RESOLVER_URL = "https://cloudflare-dns.com/dns-query"
 # NODE_ID = "1"
 # API_TOKEN = "example_dev_token"
-# API_HOST = "api.v2board.com"
+API_HOST = "api.v2board.com"
 #UUID = "76bee1cf-3881-4255-9d35-9104d245a1aa"
+
+# Uncomment if you have a custom build output directory for Pages or Workers
+# pages_build_output_dir = "dist"
+
+# Uncomment this section if you are using Durable Objects
+#[durable_objects]
+#bindings = [
+#  { name = "MY_DURABLE_OBJECT", class_name = "MyDurableObject" }
+#]
+
+# Uncomment this section if you are using KV namespaces
+#[kv_namespaces]
+#bindings = [
+#  { binding = "MY_KV", id = "your-kv-namespace-id" }
+#]
+
+# Uncomment this section if you are using R2 storage
+#[r2_buckets]
+#bindings = [
+#  { binding = "MY_R2_BUCKET", bucket_name = "your-bucket-name" }
+#]
+
+# Uncomment this section if you are using Queues
+#[queues]
+#bindings = [
+#  { binding = "MY_QUEUE", queue_name = "your-queue-name" }
+#]
+
+# Uncomment this section if you are using WebSockets
+[experimental]
+services = [
+  { service = "MY_SERVICE", environment = "production" }
+]
